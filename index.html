@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Merupakan Blog Tugas" />
+        <meta name="author" content="Kelompok 1" />
+        <title>EPIC Blog</title>
+        
+    <link rel="apple-touch-icon" sizes="180x180" href="icon.jpg">
+<link rel="icon" type="image/jpg" sizes="32x32" href="icon.jpg">
+<link rel="icon" type="image/jpg" sizes="16x16" href="icon.jpg"> 
+        
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="javascript:void(0)">
+ <img src="icon.jpg" class="img-thumbnail" style="width: 36px; height: 36px;" />
+                  EPIC Blog
+                  
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="javascript:void(0)" onclick="document.location.reload()">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="javascript:void(0)" onclick="tentang()">Tentang</a></li>
+                      <!--<li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>-->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header id="head" class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>EPIC Blog</h1>
+                            <span class="subheading">Blog Nugas Bareng</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main id="utama" class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div id="isi">
+                    <!--post here-->
+                    Loading Data...
+                    
+                    </div>
+                    
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <!-- Pager-->
+                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Postingan Lain →</a></div>
+                </div>
+            </div>
+        </div>
+        </main>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="#!">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; E.P.I.C Blog 2021</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script>
+        let home = "";
+        let home_head = "";
+        let artikel = "";
+        let kepala = document.getElementById('head');
+        let utama = document.getElementById('utama');
+        
+        let kepalaBackup = kepala.innerHTML;
+        let utamaBackup = utama.innerHTML;
+        let url = "https://cobadb-b79a.restdb.io/rest/blog";
+        function param(met, data){
+          this.mode = "cors",
+          this.headers = {
+            "content-type" : "application/json;charset=utf-8",
+            "x-apikey" : "60a69606e3b6e02545edaadc",
+            "cache-control" : "no-cache"
+          },
+          this.body = data,
+          this.method = met
+        }
+        let getParam = new param("GET",null);
+        //getData
+        fetch(url, getParam)
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("true");
+          console.log(JSON.stringify(data))
+          document.getElementById('isi').innerHTML = `
+          
+          `;
+          let count = 0;
+          //console.log(data[0]);
+          for(ls of data){
+            //console.log(ls['judul']);
+              document.getElementById('isi').innerHTML += `<!-- Post preview-->
+                    <div class="post-preview">
+                        <a href="javascript:baca(artikel[${count}]);">
+                        <h2 id="${ls.id}" class="post-title">${ls.judul}</h2>
+                        </a>
+                        <p class="post-meta">
+                            Diposting oleh
+                            <a href="#!">${ls.penulis}</a>
+                            pada ${ls.tanggal}
+                        </p>
+                    </div>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    `;
+                    ++count;
+                    //document.getElementById(ls.id).addEventListener('dblclick',baca(e));
+          }
+          artikel = data;
+          
+        })
+        .catch( e => console.log(e.toString()));
+        function beranda(){
+          kepala.innerHTML = kepalaBackup;
+          kepala.style.backgroundImage = "url('assets/img/home-bg.jpg')";
+          utama.innerHTML = utamaBackup;
+        }
+        
+          function tentang(){
+          let main_isi = `
+<div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                       <p>Mustoni (12183492)</p>
+                       <p>Deni Sopandi (12182741)</p>
+                       <p>Afzal Azkhari (12182042)</p>
+                       <p>Riska Maulidiyah (12180032)</p>
+                       <p>Diana Agustiani (12180767)</p>
+                    </div>
+                </div>
+            </div>
+          `;
+          let head_isi = `
+<div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>Kami</h1>
+                            <span class="subheading">Anggota Kelompok Ini</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          `;
+          kepala.style.backgroundImage="url('assets/img/about-bg.jpg')";
+          kepala.innerHTML = head_isi;
+          utama.innerHTML = main_isi;
+          
+          }
+          
+          function baca(data){
+            home_head = kepala.innerHTML;
+            home = utama.innerHTML;
+            kepala.innerHTML = `
+ <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>${data.judul}</h1>
+                            <span class="meta">
+                                Diposting oleh
+                                <a href="#!">${data.penulis}</a>
+                                pada ${data.tanggal}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `;
+            
+            utama.innerHTML = `
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">${data.content}
+                    </div>
+                </div>
+              </div>
+        </article>
+          <!-- Divider-->
+                    <hr class="my-4" />
+                    <!-- Pager-->
+                    <div class="d-flex justify-content-center mb-4"><a class="btn btn-danger text-lowercase" href="#!" onclick="rumah()">Tutup</a></div>
+            `;
+            
+          }
+          
+          function rumah(){
+            kepala.innerHTML = home_head;
+            utama.innerHTML = home;
+          }
+        </script>
+        
+        
+    </body>
+</html>
