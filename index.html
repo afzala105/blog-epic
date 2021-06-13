@@ -35,8 +35,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="javascript:void(0)" onclick="document.location.reload()">Beranda</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="javascript:void(0)" onclick="tentang()">Tentang</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="javascript:void(0)" onclick="beranda()">Beranda</a></li>
+                        <li class="nav-item"><a id="ttg" class="nav-link px-lg-3 py-3 py-lg-4" href="javascript:void(0)" >Tentang</a></li>
                       <!--<li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>-->
                     </ul>
@@ -140,6 +140,7 @@
         fetch(url, getParam)
         .then((res) => res.json())
         .then((data) => {
+          document.getElementById("ttg").addEventListener('click',tentang);
           console.log("true");
           console.log(JSON.stringify(data))
           document.getElementById('isi').innerHTML = `
@@ -167,6 +168,8 @@
                     //document.getElementById(ls.id).addEventListener('dblclick',baca(e));
           }
           artikel = data;
+          kepalaBackup = kepala.innerHTML;
+          utamaBackup = utama.innerHTML;
           
         })
         .catch( e => console.log(e.toString()));
@@ -182,7 +185,7 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
 <div class="text-center">                    
-<p>Universitas Bina Sarana Informatika <br /> Karawang Kampus B</p>
+<p>Universitas Bina Sarana Informatika <br /> Karawang Kampus Cikampek</p>
 <hr class="my-2" />
 </div>
                        <p>Mustoni (12183492)</p>
