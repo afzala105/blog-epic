@@ -149,11 +149,15 @@
           let count = 0;
           //console.log(data[0]);
           for(ls of data){
+            
             //console.log(ls['judul']);
               document.getElementById('isi').innerHTML += `<!-- Post preview-->
                     <div class="post-preview">
                         <a href="javascript:baca(artikel[${count}]);">
                         <h2 id="${ls.id}" class="post-title">${ls.judul}</h2>
+                        
+<h3 class="post-subtitle">${ls.sub}</h3>
+                        
                         </a>
                         <p class="post-meta">
                             Diposting oleh
@@ -224,6 +228,10 @@
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="post-heading">
                             <h1>${data.judul}</h1>
+                            
+<h2 class="subheading">${data.sub}</h2>
+                            
+                            
                             <span class="meta">
                                 Diposting oleh
                                 <a href="#!">${data.penulis}</a>
